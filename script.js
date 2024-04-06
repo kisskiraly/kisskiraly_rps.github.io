@@ -33,6 +33,12 @@ function startGameExtreme() {
 }
 
 
+//win tie lose számlálók
+var winCounter = 0;
+var tieCounter = 0;
+var loseCounter = 0;
+
+
 //a 3 lehetséges opciót eltároljuk egy tömben
 var options = ["rock", "paper"];
 var options2 = ["rock", "scissors"];
@@ -63,16 +69,23 @@ function playEasy(playerChoice) {
     var result;
     if (choices[playerChoice] === computerChoice) {
         result = "It's a tie!";
+        tieCounter = tieCounter + 1;
     } else if ((choices[playerChoice] === "rock" && computerChoice === "scissors") ||
                (choices[playerChoice] === "paper" && computerChoice === "rock") ||
                (choices[playerChoice] === "scissors" && computerChoice === "paper")) {
         result = "You win!";
+        winCounter = winCounter + 1;
     } else {
         result = "You lose!";
+        loseCounter = loseCounter + 1;
     }
     
     //felirat a kör végén
     resultMessage.innerText = "You chose " + choices[playerChoice] + ". Computer chose " + computerChoice + ". " + result;
+
+    //állás kiírása
+    var bottomMessages = document.getElementById("bottom-messages");
+    bottomMessages.innerHTML = " Win = " + winCounter + "; " + "Tie = " + tieCounter + "; " + " Lose = " + loseCounter;
 }
 
 function playNormal(playerChoice) {
@@ -90,12 +103,15 @@ function playNormal(playerChoice) {
     var result;
     if (choices[playerChoice] === computerChoice) {
         result = "It's a tie!";
+        tieCounter = tieCounter + 1;
     } else if ((choices[playerChoice] === "rock" && computerChoice === "scissors") ||
                (choices[playerChoice] === "paper" && computerChoice === "rock") ||
                (choices[playerChoice] === "scissors" && computerChoice === "paper")) {
         result = "You win!";
+        winCounter = winCounter + 1;
     } else {
         result = "You lose!";
+        loseCounter = loseCounter + 1;
     }
 
     //megváltoztatjuk az aktuális elemet egy random elemre mindkét tömbben
@@ -133,6 +149,10 @@ function playNormal(playerChoice) {
 
     //felirat a kör végén
     resultMessage.innerText = "You chose " + choices[playerChoice] + ". Computer chose " + computerChoice + ". " + result;
+
+    //állás kiírása
+    var bottomMessages = document.getElementById("bottom-messages");
+    bottomMessages.innerHTML = " Win = " + winCounter + "; " + "Tie = " + tieCounter + "; " + " Lose = " + loseCounter;
 }
 
 function playExtreme(playerChoice) {
@@ -168,6 +188,7 @@ function playExtreme(playerChoice) {
         (choices3[playerChoice] === "paper" && computerChoice === "rock_rock") ||
         (choices3[playerChoice] === "scissors" && computerChoice === "paper_paper")) {
         result = "It's a tie!";
+        tieCounter = tieCounter + 1;
     } else if ((choices3[playerChoice] === "rock" && computerChoice === "scissors") ||
                (choices3[playerChoice] === "paper" && computerChoice === "rock") ||
                (choices3[playerChoice] === "scissors" && computerChoice === "paper") ||
@@ -183,8 +204,10 @@ function playExtreme(playerChoice) {
                (choices3[playerChoice] === "joker") ||
                (computerChoice === "destroyer")) {
         result = "You win!";
+        winCounter = winCounter + 1;
     } else {
         result = "You lose!";
+        loseCounter = loseCounter + 1;
     }
     //felirat a kör végén
     resultMessage.innerText = "You chose " + choices3[playerChoice] + ". Computer chose " + computerChoice + ". " + result;
@@ -243,6 +266,10 @@ function playExtreme(playerChoice) {
     //megjeleníti a kártyákat a bal és jobb oldalon
     document.getElementById("cards_left").style.display = "block";
     document.getElementById("cards_right").style.display = "block";
+
+    //állás kiírása
+    var bottomMessages = document.getElementById("bottom-messages");
+    bottomMessages.innerHTML = " Win = " + winCounter + "; " + "Tie = " + tieCounter + "; " + " Lose = " + loseCounter;
 }
 
 
@@ -274,6 +301,7 @@ function CardOption1(card)
         buttons[i].innerText = choices3[i];
     }
 }
+
 
 function CardOption2()
 {
