@@ -7,17 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="container_left">
+        <div id="cards_left" style="display: none;">
+            <button class="btn_left" onclick="CardOption1('0')">-</button>
+            <button class="btn_left" onclick="CardOption1('1')">-</button>
+        </div>
+    </div>
+
+    <div class="container_right">
+        <div id="cards_right" style="display: none;">
+            <button class="btn_right" onclick="CardOption2()">-</button>
+        </div>
+    </div>
+
     <div class="container">
         <h1>Rock Paper Scissors</h1>
-        <div id="game">
-            <button class="btn" onclick="play('rock')">Rock</button>
-            <button class="btn" onclick="play('paper')">Paper</button>
-            <button class="btn" onclick="play('scissors')">Scissors</button>
+
+        <div id="startScreenEasy">
+            <button class="startBtn" onclick="startGameEasy()">Easy</button>
+        </div>
+        <div id="startScreenNormal">
+            <button class="startBtn" onclick="startGameNormal()">Normal</button>
+        </div>
+        <div id="startScreenExtreme">
+            <button class="startBtn" onclick="startGameExtreme()">EXTREME</button>
+        </div>
+
+        <div id="gameEasy" style="display: none;">
+            <button class="btn1" onclick="playEasy('0')">rock</button>
+            <button class="btn1" onclick="playEasy('1')">paper</button>
+            <button class="btn1" onclick="playEasy('2')">scissors</button>
+        </div>
+
+        <div id="gameNormal" style="display: none;">
+            <button class="btn2" onclick="playNormal('0')">rock</button>
+            <button class="btn2" onclick="playNormal('1')">paper</button>
+            <button class="btn2" onclick="playNormal('2')">scissors</button>
+        </div>
+
+        <div id="gameExtreme" style="display: none;">
+            <button class="btn3" onclick="playExtreme('0')">rock</button>
+            <button class="btn3" onclick="playExtreme('1')">paper</button>
+            <button class="btn3" onclick="playExtreme('2')">scissors</button>
         </div>
         
-        
         <div id="result"></div>
-    </div>
+    </div>   
     <script src="script.js"></script>
 </body>
 </html>
