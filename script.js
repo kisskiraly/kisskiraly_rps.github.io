@@ -248,6 +248,12 @@ function playExtreme(playerChoice) {
 
 function CardOption1(card)
 {
+    //ellenőrizzük, hogy vállasztott e új kártyát a játékos
+    if (choices3.length !== 2)
+    {
+        return;
+    }
+
     if (whichBlock === 1) {
         choices3.splice(whichElement, 0, options[card]);
     }else if (whichBlock === 2) {
@@ -271,6 +277,12 @@ function CardOption1(card)
 
 function CardOption2()
 {
+    //ellenőrizzük, hogy vállasztott e új kártyát a játékos
+    if (choices3.length !== 2)
+    {
+        return;
+    }
+    
     choices3.splice(whichElement, 0, optionsRed[Math.floor(Math.random() * optionsRed.length)]);
     //frissitjük a kártyák neveit
     var buttons = document.getElementsByClassName("btn3");
