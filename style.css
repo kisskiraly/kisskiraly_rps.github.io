@@ -13,14 +13,77 @@ h1 {
     color: #333;
 }
 
-.btn {
+.container_left {
+    position: fixed;
+    left: 30px;
+    top: 27%;
+    max-width: 100px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.container_right {
+    position: fixed;
+    right: 30px;
+    top: 30%;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+.startBtn {
     padding: 10px 20px;
     margin: 10px;
     font-size: 18px;
     cursor: pointer;
 }
 
+.btn1 {
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+.btn2 {
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+.btn3 {
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+
+.btn_left {
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+
+.btn_right {
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+
 #result {
+    top: 60%;
     margin-top: 20px;
     font-size: 24px;
 }
