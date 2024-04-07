@@ -30,8 +30,10 @@ function startGameExtreme() {
 
     // Játékterület megjelenítése
     document.getElementById("gameExtreme").style.display = "block";
-}
 
+    //megjelenítjük az infót
+    document.getElementById("info").style.display = 'block';
+}
 
 //win tie lose számlálók
 var winCounter = 0;
@@ -79,7 +81,7 @@ function playEasy(playerChoice) {
         result = "You lose!";
         loseCounter = loseCounter + 1;
     }
-    
+
     //felirat a kör végén
     resultMessage.innerText = "You chose " + choices[playerChoice] + ". Computer chose " + computerChoice + ". " + result;
 
@@ -114,6 +116,10 @@ function playNormal(playerChoice) {
         loseCounter = loseCounter + 1;
     }
 
+    //felirat a kör végén
+    resultMessage.innerText = "You chose " + choices[playerChoice] + ". Computer chose " + computerChoice + ". " + result;
+
+
     //megváltoztatjuk az aktuális elemet egy random elemre mindkét tömbben
     if (choices[playerChoice] === "rock")
     {
@@ -139,16 +145,12 @@ function playNormal(playerChoice) {
         choices2[computerChoice0] = options[Math.floor(Math.random() * options.length)];
     }
 
-
     //megváltoztatjuk a nevét is
     var buttons = document.getElementsByClassName("btn2");
     for(var i = 0; i < 3; i++)
     {
         buttons[i].innerText = choices[i];
     }
-
-    //felirat a kör végén
-    resultMessage.innerText = "You chose " + choices[playerChoice] + ". Computer chose " + computerChoice + ". " + result;
 
     //állás kiírása
     var bottomMessages = document.getElementById("bottom-messages");
@@ -271,6 +273,20 @@ function playExtreme(playerChoice) {
     var bottomMessages = document.getElementById("bottom-messages");
     bottomMessages.innerHTML = " Win = " + winCounter + "; " + "Tie = " + tieCounter + "; " + " Lose = " + loseCounter;
 }
+
+var kicsi = document.getElementById('info');
+var nagy = document.getElementById('info2');
+var nagyMegjelenitve = false;
+
+kicsi.addEventListener('click', function() {
+    if (!nagyMegjelenitve) {
+        nagy.style.display = 'block';
+        nagyMegjelenitve = true;
+    } else {
+        nagy.style.display = 'none';
+        nagyMegjelenitve = false;
+    }
+});
 
 
 function CardOption1(card)
